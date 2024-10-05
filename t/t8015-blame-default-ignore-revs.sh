@@ -5,6 +5,7 @@ test_description='default revisions to ignore when blaming'
 TEST_PASSES_SANITIZE_LEAK=true
 . ./test-lib.sh
 
+
 test_expect_success 'blame: default-ignore-revs-file' '
     test_commit first-commit hello.txt hello &&
 
