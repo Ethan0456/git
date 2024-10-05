@@ -1107,7 +1107,7 @@ parse_done:
 
 	// check for ENOENT for .git-blame-ignore-revs in the repository
 	if (access(".git-blame-ignore-revs", F_OK) == 0) {
-		string_list_append(&ignore_revs_file_list, default_blame_ignore_revs_file);
+		string_list_append(&ignore_revs_file_list, ".git-blame-ignore-revs");
 	}
 
 	init_scoreboard(&sb);
