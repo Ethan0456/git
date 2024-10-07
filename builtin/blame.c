@@ -1105,6 +1105,11 @@ parse_done:
 		add_pending_object(&revs, &head_commit->object, "HEAD");
 	}
 
+	// check for ENOENT for .git-blame-ignore-revs in the repository
+	if (access(".git-blame-ignore-revs", F_OK) == 0) {
+		string_list_append(&ignore_revs_file_list, ".git-blame-ignore-revs");
+	}
+
 	init_scoreboard(&sb);
 	sb.revs = &revs;
 	sb.contents_from = contents_from;
